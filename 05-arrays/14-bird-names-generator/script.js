@@ -80,8 +80,11 @@
             interator.next();
         }
         let randadj = interator.next().value[0];
-        console.log(randbirds);
-        console.log(randadj);
 
+        if (randbirds.fem) {
+            console.log(tabdeterm[1] + ' ' + randbirds.name + ' ' + randadj.concat('e'));
+        } else {
+            console.log(tabdeterm[0] + ' ' + randbirds.name + ' ' + randadj);
+        }
     });
 })();

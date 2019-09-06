@@ -10,5 +10,13 @@
 // You will have time to focus on it later.
 
 (() => {
-    // your code here
+    const obj = {
+        lastname: "macors",
+        firstname: "damien",
+        country: "belgium"
+    };
+
+    document.getElementById("run").addEventListener("click", () => {
+        console.log(obj.lastname + obj.firstname + obj.country);
+    });
 })();
