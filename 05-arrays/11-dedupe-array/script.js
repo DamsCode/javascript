@@ -27,5 +27,16 @@
         "cerise",
     ];
 
-    // your code here
+    document.getElementById("run").addEventListener("click", () => {
+        let tabindex = [];
+        fruits.forEach((elementr, index1) => {
+            fruits.forEach((element, index, array) => {
+                if (elementr == element && index1 != index) {
+                    array.splice(index, 1);
+                }
+            });
+        });
+
+        console.log(fruitscopy = [...fruits]);
+    });
 })();

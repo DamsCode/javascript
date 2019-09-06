@@ -10,5 +10,26 @@
 // You will have time to focus on it later.
 
 (() => {
-    // your code here
+    document.getElementById("run").addEventListener("click", () => {
+        function getRandomInt(max) {
+            return Math.floor(Math.random() * Math.floor(max));
+        }
+        let randArray = [];
+        for (let index = 0; index < 10; index++) {
+            randArray[index] = getRandomInt(100);
+
+        }
+        let somme = 0;
+        randArray.forEach((element, index) => {
+            let id = index + 1
+            let strind = 'n-' + id;
+            document.getElementById(strind).innerHTML = element;
+            somme = somme + element;
+        });
+        document.getElementById('sum').innerHTML = somme;
+        document.getElementById('average').innerHTML = somme / 10;
+        document.getElementById('min').innerHTML = Math.min(...randArray);
+        document.getElementById('max').innerHTML = Math.max(...randArray);
+
+    });
 })();

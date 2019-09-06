@@ -89,11 +89,18 @@
 
     document.getElementById("run").addEventListener("click", () => {
 
-        people.forEach(personne => {
-            if (personne.firstname == 'Jean' && personne.lastname == 'Dupont') {
-                console.log(personne.email);
-                console.log(people.indexOf(personne));
+        // people.forEach(personne => {
+        //     if (personne.firstname == 'Jean' && personne.lastname == 'Dupont') {
+        //         console.log(personne.email);
+        //         console.log(people.indexOf(personne));
+        //     }
+        // });
+        let personne = people.find(Element => {
+            if (Element.firstname == 'Jean' && Element.lastname == 'Dupont') {
+                return Element;
             }
         });
+        console.log(personne.email);
+        console.log(people.indexOf(personne));
     });
 })();

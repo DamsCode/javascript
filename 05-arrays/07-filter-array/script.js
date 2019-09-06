@@ -88,7 +88,8 @@
     ];
 
     document.getElementById("run").addEventListener("click", () => {
-
+        let tabadulte = people.filter(Element => Element.age > 18);
+        console.log(tabadulte);
 
     });
 })();

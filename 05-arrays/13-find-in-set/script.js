@@ -22,5 +22,14 @@
         "Lucas",
     ]);
 
-    // your code here
+    document.getElementById("run").addEventListener("click", () => {
+        console.log('il y a ' + people.size + ' personne dans le set');
+        if (people.has('Alexandre')) {
+            console.log('alexendre fait parti du set');
+
+        } else {
+            console.log('alexandre ne fait pas parti du set');
+
+        }
+    });
 })();

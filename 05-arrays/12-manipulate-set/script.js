@@ -23,5 +23,14 @@
         "cerise",
     ]);
 
-    // your code here
+    document.getElementById("run").addEventListener("click", () => {
+        fruits.forEach((elem) => {
+            if (elem == 'pomme' || elem == 'cerise') {
+                fruits.delete(elem);
+            }
+        });
+        fruits.add('banane').add('kiwi');
+        console.log(fruits);
+
+    });
 })();

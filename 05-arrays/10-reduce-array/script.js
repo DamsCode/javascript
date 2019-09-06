@@ -10,8 +10,7 @@
 // You will have time to focus on it later.
 
 (() => {
-    const people = [
-        {
+    const people = [{
             firstname: "Grenville",
             lastname: "Stive",
             age: 64,
@@ -88,5 +87,8 @@
         },
     ];
 
-    // your code here
+    document.getElementById("run").addEventListener("click", () => {
+        console.log(people.map((elem) => elem.age)
+            .reduce((acc, curr) => acc + curr));
+    });
 })();
