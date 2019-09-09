@@ -10,5 +10,11 @@
 // You will have time to focus on it later.
 
 (() => {
-    // your code here
+    document.getElementById("pass-one").addEventListener("keyup", (e) => {
+        let str = e.target.value;
+        if (str.length > 10) {
+            e.target.value = str.substr(0, str.length - 1);
+        } else
+            document.getElementById('counter').innerHTML = `${str.length}/10`;
+    })
 })();

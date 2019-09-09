@@ -10,5 +10,13 @@
 // You will have time to focus on it later.
 
 (() => {
-    // your code here
+    let tab = document.createElement("table");
+    for (let index = 1; index < 11; index++) {
+        let tr = document.createElement("tr");
+        let td = document.createElement('td');
+        td.innerHTML = `${index} * 1 = ${index * 1}`;
+        tr.appendChild(td);
+        tab.appendChild(tr);
+    }
+    document.getElementById("target").appendChild(tab);
 })();

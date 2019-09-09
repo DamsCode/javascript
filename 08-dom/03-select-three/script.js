@@ -10,5 +10,9 @@
 // You will have time to focus on it later.
 
 (() => {
-    // your code here
+    let htmltabelem = document.getElementsByClassName("target");
+    for (let index = 0; index < htmltabelem.length; index++) {
+        htmltabelem.item(index).innerHTML = 'owned';
+    }
+
 })();
