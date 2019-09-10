@@ -10,5 +10,29 @@
 // You will have time to focus on it later.
 
 (() => {
-    // your code here
+    document.getElementById('part-one').addEventListener("click", (e) => {
+        cicle(e);
+    });
+    document.getElementById('part-two').addEventListener("click", (e) => {
+        cicle(e);
+    });
+    document.getElementById('part-three').addEventListener("click", (e) => {
+        cicle(e);
+    });
+    document.getElementById('part-four').addEventListener("click", (e) => {
+        cicle(e);
+    });
 })();
+
+function cicle(e) {
+    let mybtn = e.target;
+    let minval = parseInt(mybtn.getAttribute('data-min'));
+    let maxval = parseInt(mybtn.getAttribute('data-max'));
+    let currval = parseInt(mybtn.innerText);
+    if (currval == maxval) {
+        mybtn.innerText = new String(`0${minval}`);
+    } else if (currval < 9) {
+        mybtn.innerText = new String(`0${currval + 1}`);
+    } else
+        mybtn.innerText = new String(currval + 1);
+}

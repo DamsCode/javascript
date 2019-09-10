@@ -13,17 +13,21 @@
     let theText = "Bon je suis oklm devant mon pc";
 
     function nextSize(i, incMethod, textLength) {
-        if (incMethod == 1) return (72 * Math.abs(Math.sin(i / (textLength / 3.14))));
-        if (incMethod == 2) return (255 * Math.abs(
-            Math.cos(i / (textLength / 3.14))));
+        if (incMethod == 1) return 35 * Math.abs(Math.sin(i / (textLength / 3.14)));
+        if (incMethod == 2)
+            return 255 * Math.abs(Math.cos(i / (textLength / 3.14)));
     }
 
     function sizeCycle(text, method, dis) {
         output = "";
         for (i = 0; i < text.length; i++) {
             size = parseInt(nextSize(i + dis, method, text.length));
-            output += "<font style='font-size: " + size + "pt'>" +
-                text.substring(i, i + 1) + "</font>";
+            output +=
+                "<font style='font-size: " +
+                size +
+                "pt'>" +
+                text.substring(i, i + 1) +
+                "</font>";
         }
         document.getElementById("target").innerHTML = output;
     }
@@ -37,5 +41,5 @@
             do_vague(n + 1);
         }, 50);
     }
-    document.getElementById("target").addEventListener("load", do_vague(0));
+    document.getElementById("target").addEventListener("load", do_vague(2));
 })();
