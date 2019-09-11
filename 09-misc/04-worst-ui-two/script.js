@@ -29,13 +29,20 @@ function cicle(e) {
     let minval = parseInt(mybtn.getAttribute('data-min'));
     let maxval = parseInt(mybtn.getAttribute('data-max'));
     let currval = parseInt(mybtn.innerText);
+    let targ = document.getElementById("target");
+    let numero = parseInt(targ.innerText.substr(1, targ.length));
+
     if (currval == maxval && minval > 10) {
-        mybtn.value = new String(`${minval}`);
+        targ.innerText = `+${numero +minval}`;
+        mybtn.innerText = new String(`${minval}`);
     } else if (currval == maxval) {
+        targ.innerText = `+${numero +minval}`;
         mybtn.innerText = new String(`0${minval}`);
     } else if (currval < 9) {
+        targ.innerText = `+${numero + currval + 1}`;
         mybtn.innerText = new String(`0${currval + 1}`);
     } else {
+        targ.innerText = `+${numero + currval + 1}`;
         mybtn.innerText = new String(currval + 1);
     }
 }

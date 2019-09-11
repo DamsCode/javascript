@@ -14,16 +14,20 @@ function cicle(elem) {
     let minval = parseInt(myelem.getAttribute("data-min"));
     let maxval = parseInt(myelem.getAttribute("data-max"));
     let currval = parseInt(myelem.value);
-    let valtarget = new Number(document.getElementById('target').innerHTML);
-
+    let targ = document.getElementById("target");
+    let numero = parseInt(targ.innerText.substr(1, targ.length));
 
     if (currval == maxval && minval > 10) {
+        targ.innerText = `+${numero +minval}`;
         myelem.value = new String(`${minval}`);
     } else if (currval == maxval) {
+        targ.innerText = `+${numero +minval}`;
         myelem.value = new String(`0${minval}`);
     } else if (currval < 9) {
+        targ.innerText = `+${numero +currval + 1}`;
         myelem.value = new String(`0${currval + 1}`);
     } else {
+        targ.innerText = `+${numero +currval + 1}`;
         myelem.value = new String(currval + 1);
     }
 }
