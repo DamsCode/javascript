@@ -29,10 +29,13 @@ function cicle(e) {
     let minval = parseInt(mybtn.getAttribute('data-min'));
     let maxval = parseInt(mybtn.getAttribute('data-max'));
     let currval = parseInt(mybtn.innerText);
-    if (currval == maxval) {
+    if (currval == maxval && minval > 10) {
+        mybtn.value = new String(`${minval}`);
+    } else if (currval == maxval) {
         mybtn.innerText = new String(`0${minval}`);
     } else if (currval < 9) {
         mybtn.innerText = new String(`0${currval + 1}`);
-    } else
+    } else {
         mybtn.innerText = new String(currval + 1);
+    }
 }

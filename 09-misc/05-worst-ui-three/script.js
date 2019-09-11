@@ -10,43 +10,49 @@
 // You will have time to focus on it later.
 
 function cicle(elem) {
+    let myelem = elem;
+    let minval = parseInt(myelem.getAttribute("data-min"));
+    let maxval = parseInt(myelem.getAttribute("data-max"));
+    let currval = parseInt(myelem.value);
+    let valtarget = new Number(document.getElementById('target').innerHTML);
 
-    let mybtn = elem;
-    let minval = parseInt(mybtn.getAttribute('data-min'));
-    let maxval = parseInt(mybtn.getAttribute('data-max'));
-    let currval = parseInt(mybtn.value);
-    if (currval == maxval) {
-        mybtn.value = new String(`0${minval}`);
+
+    if (currval == maxval && minval > 10) {
+        myelem.value = new String(`${minval}`);
+    } else if (currval == maxval) {
+        myelem.value = new String(`0${minval}`);
     } else if (currval < 9) {
-        mybtn.value = new String(`0${currval + 1}`);
-    } else
-        mybtn.value = new String(currval + 1);
+        myelem.value = new String(`0${currval + 1}`);
+    } else {
+        myelem.value = new String(currval + 1);
+    }
 }
 
 function cluster(e) {
-    let idtime = e.target.getAttribute("data-timeout");
+    let idtime = e.getAttribute("data-timeout");
+
     if (idtime != null) {
         clearInterval(idtime);
-        e.target.removeAttribute("data-timeout");
+        e.removeAttribute("data-timeout");
     } else {
         idtime = setInterval(() => {
-            cicle(document.getElementById("part-one"));
+            cicle(e.parentNode.firstChild.nextSibling);
         }, 500);
-        e.target.setAttribute("data-timeout", idtime);
+        e.setAttribute("data-timeout", idtime);
     }
 }
 
 (() => {
-    document.getElementById('fix-part-one').addEventListener("click", (e) => {
-        cluster(e);
+    document.getElementById("fix-part-one").addEventListener("click", e => {
+        cluster(e.target);
     });
-    document.getElementById('fix-part-two').addEventListener("click", (e) => {
-        cluster(e);
+    document.getElementById("fix-part-two").addEventListener("click", e => {
+        cluster(e.target);
     });
-    document.getElementById('fix-part-three').addEventListener("click", (e) => {
-        cluster(e);
+    document.getElementById("fix-part-three").addEventListener("click", e => {
+        cluster(e.target);
     });
-    document.getElementById('fix-part-four').addEventListener("click", (e) => {
-        cluster(e);
+    document.getElementById("fix-part-four").addEventListener("click", e => {
+        cluster(e.target);
     });
 })();
