@@ -82,9 +82,9 @@
         let randadj = interator.next().value[0];
 
         if (randbirds.fem) {
-            console.log(tabdeterm[1] + ' ' + randbirds.name + ' ' + randadj.concat('e'));
+            document.getElementById("target").innerText = tabdeterm[1] + ' ' + randbirds.name + ' ' + randadj.concat('e');
         } else {
-            console.log(tabdeterm[0] + ' ' + randbirds.name + ' ' + randadj);
+            document.getElementById("target").innerText = tabdeterm[0] + ' ' + randbirds.name + ' ' + randadj;
         }
     });
 })();

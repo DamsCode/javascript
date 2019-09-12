@@ -11,14 +11,15 @@
 
 (() => {
     document.getElementById("run").addEventListener('click', () => {
+
         let mdp = document.getElementById("pass-one").value;
         let mdp2 = document.getElementById("pass-two").value;
         if (mdp != mdp2) {
             document.getElementById("pass-one").style.borderColor = 'red';
             document.getElementById("pass-two").style.borderColor = 'red';
         } else {
-            document.getElementById("pass-one").style.borderColor = 'none';
-            document.getElementById("pass-two").style.borderColor = 'none';
+            document.getElementById("pass-one").style.borderColor = '';
+            document.getElementById("pass-two").style.borderColor = '';
         }
     })
 })();

@@ -17,8 +17,8 @@
             document.getElementById("pass-one").className = 'error';
             document.getElementById("pass-two").className = 'error';
         } else {
-            document.getElementById("pass-one").className = '';
-            document.getElementById("pass-two").className = '';
+            document.getElementById("pass-one").classList.remove('error');
+            document.getElementById("pass-two").classList.remove('error');
         }
     })
 })();

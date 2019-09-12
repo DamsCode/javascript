@@ -37,6 +37,8 @@
     document.getElementById("run").addEventListener('click', () => {
         let dog = new Dog('Charle');
         let cat = new Cat('kittie');
+        console.log(cat.greeting);
+
         console.log(dog);
         console.log(cat);
 
