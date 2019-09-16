@@ -30,7 +30,7 @@
         let perso = new Person('damien', 'macors');
         console.log(perso.name);
         perso.name = "jean carlos";
-        console.log(perso.name);
+        console.log(perso);
 
     })
 })();

@@ -20,9 +20,6 @@
             for (let ind = 1; ind <= 31; ind++) {
                 mydate.setMonth(index, ind);
                 if (mydate.getDay() == 5 && mydate.getDate() == 13) {
-                    let options = {
-                        month: 'long'
-                    };
                     console.log(monthNames[mydate.getMonth()]);
                 }
             }

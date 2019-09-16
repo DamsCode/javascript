@@ -17,7 +17,7 @@
         }
 
         sayHello() {
-            return this.firstname + this.lastname;
+            return `Hello, ${this.firstname} ${this.lastname}`;
         };
     }
     document.getElementById("run").addEventListener('click', () => {
