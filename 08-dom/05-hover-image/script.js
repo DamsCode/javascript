@@ -8,7 +8,10 @@
 
 // NOTE: don't focus on the existing code structure for now.
 // You will have time to focus on it later.
-
 (() => {
-    // your code here
+    document.getElementsByTagName("img")[0].addEventListener("mouseover", (e) => {
+        let myimg = e.target;
+        let mylink = myimg.getAttribute("data-hover");
+        myimg.setAttribute("src", mylink);
+    });
 })();

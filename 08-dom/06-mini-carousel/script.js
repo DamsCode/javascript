@@ -18,5 +18,13 @@
         "../../_shared/img/map.svg",
     ];
 
-    // your code here
+    document.getElementById("next").addEventListener("click", () => {
+        let ind = gallery.findIndex((element, index) => document.getElementsByTagName('img')[0].getAttribute('src') === element);
+
+        if (ind + 1 == gallery.length) {
+            document.getElementsByTagName('img')[0].setAttribute('src', gallery[0]);
+        } else
+            document.getElementsByTagName('img')[0].setAttribute('src', gallery[ind + 1]);
+    });
+
 })();

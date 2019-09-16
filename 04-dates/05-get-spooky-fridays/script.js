@@ -12,15 +12,20 @@
 (() => {
     document.getElementById("run").addEventListener("click", () => {
         let mydate = new Date();
-        const monthNames = ["Janvier", "Février", "Mars", "Avril", "Mai", "Juin",
-            "Juillet", "Aout", "Septembre", "Octobre", "Novembre", "Decembre"
-        ];
+
+        let options = {
+            month: 'long'
+        };
         mydate.setFullYear(new Number(document.getElementById("year").value));
         for (let index = 0; index < 12; index++) {
             for (let ind = 1; ind <= 31; ind++) {
                 mydate.setMonth(index, ind);
                 if (mydate.getDay() == 5 && mydate.getDate() == 13) {
+<<<<<<< HEAD
                     console.log(monthNames[mydate.getMonth()]);
+=======
+                    console.log(new Intl.DateTimeFormat('fr-FR', options).format(mydate));
+>>>>>>> 4694818995b99898af04b0606b4065cee7284879
                 }
             }
         }

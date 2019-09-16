@@ -10,5 +10,18 @@
 // You will have time to focus on it later.
 
 (() => {
-    // your code here
+    let increm = localStorage.getItem("incre");
+    if (increm != null) {
+        document.getElementById("target").innerText = increm;
+    }
+
+    document.getElementById("increment").addEventListener('click', () => {
+        if (increm == null) {
+            increm = 1;
+        } else {
+            increm++;
+        }
+        document.getElementById("target").innerText = increm;
+        localStorage.setItem("incre", increm);
+    })
 })();

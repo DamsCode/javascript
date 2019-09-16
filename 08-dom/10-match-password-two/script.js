@@ -10,5 +10,15 @@
 // You will have time to focus on it later.
 
 (() => {
-    // your code here
+    document.getElementById("run").addEventListener('click', () => {
+        let mdp = document.getElementById("pass-one").value;
+        let mdp2 = document.getElementById("pass-two").value;
+        if (mdp != mdp2) {
+            document.getElementById("pass-one").className = 'error';
+            document.getElementById("pass-two").className = 'error';
+        } else {
+            document.getElementById("pass-one").classList.remove('error');
+            document.getElementById("pass-two").classList.remove('error');
+        }
+    })
 })();

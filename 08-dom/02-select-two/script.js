@@ -10,5 +10,5 @@
 // You will have time to focus on it later.
 
 (() => {
-    // your code here
+    document.getElementsByClassName("target").item(0).innerHTML = 'owned';
 })();

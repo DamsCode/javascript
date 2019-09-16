@@ -10,5 +10,20 @@
 // You will have time to focus on it later.
 
 (() => {
-    // your code here
+    document.getElementById("pass-one").addEventListener("change", e => {
+        let str = e.target.value;
+        let nbdigit = 0;
+        for (let index = 0; index < str.length; index++) {
+            let element = str.charAt(index);
+            if (!Number.isNaN(Number(element))) {
+                nbdigit++;
+            }
+        }
+
+        if (str.length >= 8 && nbdigit >= 2) {
+            document.getElementById("validity").innerHTML = `ok`;
+        } else {
+            document.getElementById("validity").innerHTML = `Pas ok`;
+        }
+    });
 })();
